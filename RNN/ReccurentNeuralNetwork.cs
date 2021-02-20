@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace RNN
 {
@@ -41,6 +39,7 @@ namespace RNN
                 list.AddRange(currentChar);
                 double[] data = list.ToArray();
 
+                base.Handle(data);
                 base.Teach(data, nextChar, learningSpeed);
             }
 

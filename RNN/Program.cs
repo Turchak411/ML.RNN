@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RNN
 {
@@ -15,7 +11,7 @@ namespace RNN
         {
             m_fileManager = new FileManager("memory.txt");
 
-            int[] neuronsScheme = new int[3] { 50, 45, 26 };
+            int[] neuronsScheme = new int[2] { 50, 26 };
             int receptorsNumber = 52;
 
             m_RNN = new RecurrentNeuralNetwork(neuronsScheme, receptorsNumber, m_fileManager);
@@ -53,7 +49,7 @@ namespace RNN
             Console.Write("Input count of chars: ");
             int count = Convert.ToInt32(Console.ReadLine());
 
-            m_RNN.Handle(core, count);
+            Console.WriteLine(m_RNN.Handle(core, count));
         }
 
         private static void NetTeachFunc()
