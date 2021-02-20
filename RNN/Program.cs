@@ -11,7 +11,7 @@ namespace RNN
         {
             m_fileManager = new FileManager("memory.txt");
 
-            int[] neuronsScheme = new int[2] { 50, 26 };
+            int[] neuronsScheme = new int[2] { 10, 26 };
             int receptorsNumber = 52;
 
             m_RNN = new RecurrentNeuralNetwork(neuronsScheme, receptorsNumber, m_fileManager);
@@ -65,7 +65,7 @@ namespace RNN
 
             try
             {
-                for (int i = 0; i < 64000; i++)
+                for (int i = 0; i < 200000; i++)
                 {
                     // Пересчет величины скорости обучения:
                     learningSpeed = 0.01 * Math.Pow(0.1, i / 150000);
